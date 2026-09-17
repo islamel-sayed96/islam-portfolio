@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: islam-portfolio-demo
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /up
+    envVars:
+      - key: APP_NAME
+        value: "إسلام سيد"
