@@ -8,6 +8,10 @@ Route::get('/', function () {
     return Inertia::render('Welcome');
 });
 
+Route::get('/terms', function () {
+    return Inertia::render('Terms');
+})->name('terms');
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
