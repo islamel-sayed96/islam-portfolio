@@ -20,12 +20,18 @@ export default function PortfolioFooter() {
                     </a>
                 </div>
 
-                <div className="border-t border-gray-100 pt-4 dark:border-gray-800">
+                <div className="flex gap-5 border-t border-gray-100 pt-4 dark:border-gray-800">
                     <Link
                         href={route('terms')}
                         className="text-xs font-medium text-gray-400 hover:text-brand-600 dark:text-gray-500 dark:hover:text-brand-300"
                     >
                         الشروط والأحكام
+                    </Link>
+                    <Link
+                        href={route('privacy')}
+                        className="text-xs font-medium text-gray-400 hover:text-brand-600 dark:text-gray-500 dark:hover:text-brand-300"
+                    >
+                        سياسة الخصوصية
                     </Link>
                 </div>
             </div>
