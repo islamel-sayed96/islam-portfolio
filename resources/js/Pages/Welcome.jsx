@@ -1,6 +1,7 @@
 import Contact from '@/Components/Portfolio/Contact';
 import CoursesTeaser from '@/Components/Portfolio/CoursesTeaser';
 import Hero from '@/Components/Portfolio/Hero';
+import InstructorApplication from '@/Components/Portfolio/InstructorApplication';
 import PortfolioFooter from '@/Components/Portfolio/PortfolioFooter';
 import PortfolioNav from '@/Components/Portfolio/PortfolioNav';
 import Projects from '@/Components/Portfolio/Projects';
@@ -23,6 +24,7 @@ export default function Welcome() {
                 <Skills />
                 <Projects />
                 <CoursesTeaser />
+                <InstructorApplication />
                 <Contact />
                 <PortfolioFooter />
             </div>
