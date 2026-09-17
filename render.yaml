@@ -8,3 +8,5 @@ services:
     envVars:
       - key: APP_NAME
         value: "إسلام سيد"
+      - key: ZIINA_API_KEY
+        sync: false

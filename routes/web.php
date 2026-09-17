@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ZiinaTestController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,6 +16,12 @@ Route::get('/terms', function () {
 Route::get('/privacy', function () {
     return Inertia::render('Privacy');
 })->name('privacy');
+
+Route::prefix('payments/ziina')->name('ziina.')->group(function () {
+    Route::get('/test', [ZiinaTestController::class, 'test'])->name('test');
+    Route::get('/success', [ZiinaTestController::class, 'success'])->name('success');
+    Route::get('/cancel', [ZiinaTestController::class, 'cancel'])->name('cancel');
+});
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
