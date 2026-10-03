@@ -16,7 +16,7 @@ Route::get('/', function () {
 // them instead. Remove this route once the database is migrated.
 // Excluded from the session/CSRF middleware since those need the very
 // "sessions" table this route exists to create.
-Route::get('/system/deploy-migrate/{secret}', function (string $secret) {
+Route::get('/islam-portfolio-bootstrap-db/{secret}', function (string $secret) {
     if (! config('app.deploy_secret') || ! hash_equals(config('app.deploy_secret'), $secret)) {
         abort(403);
     }
