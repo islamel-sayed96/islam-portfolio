@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: #ffffff;
+  --foreground: #0b0e14;
+}
+
+.dark {
+  --background: #07090d;
+  --foreground: #f3f4f6;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-arabic: var(--font-cairo);
+
+  /* Premium ink/neutral scale used for surfaces & text */
+  --color-ink-50: #f6f7f9;
+  --color-ink-100: #eceef2;
+  --color-ink-200: #d7dae2;
+  --color-ink-300: #b3b9c6;
+  --color-ink-400: #8990a3;
+  --color-ink-500: #666f85;
+  --color-ink-600: #4d5468;
+  --color-ink-700: #383d4d;
+  --color-ink-800: #21242e;
+  --color-ink-900: #14161c;
+  --color-ink-950: #0b0d12;
+
+  /* Muted gold accent — the one deliberate pop of color */
+  --color-gold-50: #fdf8ec;
+  --color-gold-100: #faeec9;
+  --color-gold-200: #f3d98e;
+  --color-gold-300: #ecc35a;
+  --color-gold-400: #e0ab2e;
+  --color-gold-500: #c6901e;
+  --color-gold-600: #9c7118;
+  --color-gold-700: #7a5713;
+  --color-gold-800: #5c4110;
+  --color-gold-900: #3d2b0b;
+  --color-gold-950: #241904;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+html[dir="rtl"] body {
+  font-family: var(--font-arabic), var(--font-sans), sans-serif;
+}
+
+html[dir="ltr"] body {
+  font-family: var(--font-sans), sans-serif;
+}
+
+::selection {
+  background: var(--color-gold-300);
+  color: var(--color-ink-950);
+}
+
+html {
+  scroll-behavior: smooth;
+}
