@@ -79,15 +79,16 @@ export default function Hero() {
           className="relative mx-auto aspect-[4/5] w-full max-w-sm"
         >
           <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] border border-gold-300/60 dark:border-gold-800/60" />
-          <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-gold-50 to-white shadow-2xl shadow-ink-900/20 dark:from-ink-900 dark:to-ink-950">
+          <div className="relative h-full w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-ink-900/20">
             <Image
-              src="/images/avatar.png"
+              src="/images/hero.jpg"
               alt={t.profile.name}
               fill
               sizes="(max-width: 1024px) 60vw, 400px"
-              className="object-contain p-8"
+              className="object-cover"
               priority
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
           </div>
 
           <motion.div

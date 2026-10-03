@@ -83,6 +83,8 @@ export const content = {
     toolsSection: {
       kicker: "Toolbox",
       title: "Tools & technologies I work with",
+      devLabel: "Development & Design",
+      marketingLabel: "Marketing & E-commerce",
     },
     experienceSection: {
       kicker: "Career path",
@@ -402,6 +404,8 @@ export const content = {
     toolsSection: {
       kicker: "أدواتي",
       title: "الأدوات والتقنيات اللي بشتغل بيها",
+      devLabel: "تطوير وتصميم",
+      marketingLabel: "تسويق وتجارة إلكترونية",
     },
     experienceSection: {
       kicker: "المسار المهني",
