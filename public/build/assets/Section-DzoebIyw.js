@@ -1,0 +1,1 @@
+import{t as e}from"./app-CkfNbCZr.js";var t=e();function n({title:e,children:n}){return(0,t.jsxs)(`section`,{className:`mt-10`,children:[(0,t.jsx)(`h2`,{className:`text-xl font-bold text-gray-900 dark:text-white`,children:e}),(0,t.jsx)(`div`,{className:`mt-3 space-y-3 leading-relaxed text-gray-600 dark:text-gray-300`,children:n})]})}export{n as t};
