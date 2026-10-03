@@ -2,6 +2,18 @@ import { motion } from 'framer-motion';
 import { ArrowUpLeft } from 'lucide-react';
 import { projects } from '@/Data/portfolio';
 
+function monogram(title) {
+    const words = title.split(' ');
+    if (words.length === 1) return title;
+
+    // Keep an already-acronym-like first word as-is (e.g. "NTC Emirates" -> "NTC")
+    // instead of reducing it to its first letter.
+    const [first] = words;
+    if (first === first.toUpperCase() && first.length <= 4) return first;
+
+    return words.map((w) => w[0]).join('').toUpperCase();
+}
+
 export default function Projects() {
     return (
         <section
@@ -36,8 +48,8 @@ export default function Projects() {
                             <div
                                 className={`relative flex h-44 items-center justify-center bg-gradient-to-br ${project.gradient}`}
                             >
-                                <span className="text-2xl font-black text-white/90">
-                                    {project.title.split(' ')[0]}
+                                <span className="text-3xl font-black text-white/90">
+                                    {monogram(project.title)}
                                 </span>
                             </div>
 
