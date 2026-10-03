@@ -13,11 +13,8 @@ export default function Footer() {
     <footer className="border-t border-ink-100 bg-ink-50 py-10 dark:border-ink-800 dark:bg-ink-950">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-6 px-4 sm:px-6 lg:px-8">
         <div className="flex w-full flex-col items-center justify-between gap-4 sm:flex-row">
-          <a href="#hero" className="flex items-center gap-2">
-            <Logo className="h-7 w-7" />
-            <span className="text-sm font-semibold text-ink-900 dark:text-white">
-              {t.profile.name}
-            </span>
+          <a href="/#hero">
+            <Logo />
           </a>
 
           <p className="text-sm text-ink-500 dark:text-ink-400">

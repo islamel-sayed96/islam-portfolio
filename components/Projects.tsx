@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowUpLeft } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageProvider";
@@ -27,6 +28,11 @@ export default function Projects() {
   const { lang } = useLanguage();
   const t = content[lang];
   const Arrow = lang === "ar" ? ArrowUpLeft : ArrowUpRight;
+  const [filter, setFilter] = useState<string>("all");
+
+  const categories = Object.keys(t.projectCategories);
+  const visibleProjects =
+    filter === "all" ? t.projects : t.projects.filter((p) => p.category === filter);
 
   return (
     <section id="projects" className="bg-white py-24 dark:bg-ink-950">
@@ -45,14 +51,41 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {t.projects.map((project, i) => (
+        <div className="mt-10 flex flex-wrap justify-center gap-3">
+          <button
+            onClick={() => setFilter("all")}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
+              filter === "all"
+                ? "bg-ink-950 text-white dark:bg-gold-400 dark:text-ink-950"
+                : "bg-ink-50 text-ink-600 hover:bg-ink-100 dark:bg-ink-800 dark:text-ink-300 dark:hover:bg-ink-700"
+            }`}
+          >
+            {t.projectsSection.all}
+          </button>
+          {categories.map((cat) => (
+            <button
+              key={cat}
+              onClick={() => setFilter(cat)}
+              className={`rounded-full px-5 py-2 text-sm font-semibold transition ${
+                filter === cat
+                  ? "bg-ink-950 text-white dark:bg-gold-400 dark:text-ink-950"
+                  : "bg-ink-50 text-ink-600 hover:bg-ink-100 dark:bg-ink-800 dark:text-ink-300 dark:hover:bg-ink-700"
+              }`}
+            >
+              {t.projectCategories[cat]}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {visibleProjects.map((project, i) => (
             <motion.div
               key={project.key}
+              layout
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.5, delay: (i % 6) * 0.1 }}
               className="group overflow-hidden rounded-2xl border border-ink-100 bg-white shadow-sm transition-shadow hover:shadow-2xl dark:border-ink-800 dark:bg-ink-900"
             >
               <div

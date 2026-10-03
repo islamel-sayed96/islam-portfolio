@@ -16,7 +16,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center overflow-hidden bg-white pt-16 dark:bg-ink-950"
+      className="relative flex min-h-screen items-center overflow-hidden bg-white pt-16 sm:pt-[6.5rem] dark:bg-ink-950"
     >
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -start-24 top-16 h-80 w-80 rounded-full bg-gold-200/40 blur-3xl dark:bg-gold-900/20" />
@@ -79,16 +79,15 @@ export default function Hero() {
           className="relative mx-auto aspect-[4/5] w-full max-w-sm"
         >
           <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] border border-gold-300/60 dark:border-gold-800/60" />
-          <div className="relative h-full w-full overflow-hidden rounded-[2rem] shadow-2xl shadow-ink-900/20">
+          <div className="relative h-full w-full overflow-hidden rounded-[2rem] bg-gradient-to-br from-gold-50 to-white shadow-2xl shadow-ink-900/20 dark:from-ink-900 dark:to-ink-950">
             <Image
-              src="/images/islam.jpg"
+              src="/images/avatar.png"
               alt={t.profile.name}
               fill
               sizes="(max-width: 1024px) 60vw, 400px"
-              className="object-cover grayscale-[15%]"
+              className="object-contain p-8"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/50 via-transparent to-transparent" />
           </div>
 
           <motion.div

@@ -1,6 +1,6 @@
 "use client";
 
-import Nav from "@/components/Nav";
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Section from "@/components/legal/Section";
 import { useLanguage } from "@/lib/LanguageProvider";
@@ -12,12 +12,12 @@ export default function Privacy() {
 
   return (
     <div className="bg-white dark:bg-ink-950">
-      <Nav />
+      <Header />
 
       <main
         dir="rtl"
         lang="ar"
-        className="mx-auto max-w-3xl px-4 pb-24 pt-32 sm:px-6 lg:px-8"
+        className="mx-auto max-w-3xl px-4 pb-24 pt-32 sm:px-6 sm:pt-40 lg:px-8"
       >
         <h1 className="text-3xl font-bold text-ink-950 sm:text-4xl dark:text-white">
           سياسة الخصوصية
