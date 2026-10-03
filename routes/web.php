@@ -2,11 +2,26 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ZiinaTestController;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
     return Inertia::render('Welcome');
+});
+
+// Temporary, one-off: Hostinger's SSH shell only has an old PHP CLI
+// binary, so migrations can't run via `php artisan migrate` there.
+// Visiting this once (over HTTP, which correctly uses PHP 8.4) runs
+// them instead. Remove this route once the database is migrated.
+Route::get('/system/deploy-migrate/{secret}', function (string $secret) {
+    if (! config('app.deploy_secret') || ! hash_equals(config('app.deploy_secret'), $secret)) {
+        abort(403);
+    }
+
+    Artisan::call('migrate', ['--force' => true]);
+
+    return '<pre>'.e(Artisan::output()).'</pre>';
 });
 
 Route::get('/terms', function () {
