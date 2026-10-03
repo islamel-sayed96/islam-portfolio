@@ -14,6 +14,8 @@ Route::get('/', function () {
 // binary, so migrations can't run via `php artisan migrate` there.
 // Visiting this once (over HTTP, which correctly uses PHP 8.4) runs
 // them instead. Remove this route once the database is migrated.
+// Excluded from the session/CSRF middleware since those need the very
+// "sessions" table this route exists to create.
 Route::get('/system/deploy-migrate/{secret}', function (string $secret) {
     if (! config('app.deploy_secret') || ! hash_equals(config('app.deploy_secret'), $secret)) {
         abort(403);
@@ -22,7 +24,11 @@ Route::get('/system/deploy-migrate/{secret}', function (string $secret) {
     Artisan::call('migrate', ['--force' => true]);
 
     return '<pre>'.e(Artisan::output()).'</pre>';
-});
+})->withoutMiddleware([
+    \Illuminate\Session\Middleware\StartSession::class,
+    \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+    \Illuminate\Foundation\Http\Middleware\PreventRequestForgery::class,
+]);
 
 Route::get('/terms', function () {
     return Inertia::render('Terms');
