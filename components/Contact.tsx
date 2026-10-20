@@ -11,6 +11,7 @@ import {
 } from "./SocialIcons";
 import { useLanguage } from "@/lib/LanguageProvider";
 import { content } from "@/lib/content";
+import SectionKicker from "./SectionKicker";
 
 const socialIcons = [
   { key: "github", Icon: GithubIcon },
@@ -27,18 +28,18 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-white py-24 dark:bg-ink-950">
       <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <SectionKicker
+          n="08"
+          kicker={t.contactSection.kicker}
+          title={t.contactSection.title}
+          desc={t.contactSection.desc}
+        />
+
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-gold-600 dark:text-gold-400">
-            {t.contactSection.kicker}
-          </h2>
-          <p className="mt-3 text-3xl font-bold text-ink-950 sm:text-4xl dark:text-white">
-            {t.contactSection.title}
-          </p>
-          <p className="mt-4 text-ink-600 dark:text-ink-300">{t.contactSection.desc}</p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a

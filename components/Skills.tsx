@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/lib/LanguageProvider";
 import { content } from "@/lib/content";
+import SectionKicker from "./SectionKicker";
 
 const icons = { Code2, Server, PenTool, TrendingUp, LayoutTemplate, ShoppingCart };
 
@@ -21,19 +22,7 @@ export default function Skills() {
   return (
     <section id="skills" className="bg-white py-24 dark:bg-ink-950">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-gold-600 dark:text-gold-400">
-            {t.skillsSection.kicker}
-          </h2>
-          <p className="mt-3 text-3xl font-bold text-ink-950 sm:text-4xl dark:text-white">
-            {t.skillsSection.title}
-          </p>
-        </motion.div>
+        <SectionKicker n="01" kicker={t.skillsSection.kicker} title={t.skillsSection.title} />
 
         <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {t.skills.map((skill, i) => {

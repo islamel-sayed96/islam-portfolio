@@ -44,6 +44,9 @@ export const content = {
       { value: 3, suffix: "", label: "Teaching institutes" },
       { value: 6, suffix: "+", label: "Courses taught" },
     ],
+    brandsSection: {
+      label: "Trusted by",
+    },
     skillsSection: {
       kicker: "What I do",
       title: "Full-spectrum product & growth expertise",
@@ -85,6 +88,43 @@ export const content = {
       title: "Tools & technologies I work with",
       devLabel: "Development & Design",
       marketingLabel: "Marketing & E-commerce",
+    },
+    processSection: {
+      kicker: "How I work",
+      title: "From brief to launch, and beyond",
+    },
+    process: [
+      {
+        title: "Discover",
+        desc: "Understand the goal, the audience, and what success actually looks like.",
+      },
+      {
+        title: "Design",
+        desc: "Wireframes and UI that reflect the brand, built around real user flows.",
+      },
+      {
+        title: "Build",
+        desc: "Clean, scalable front-end and back-end code, with the integrations the project needs.",
+      },
+      {
+        title: "Launch",
+        desc: "QA, performance and SEO groundwork, then a smooth go-live.",
+      },
+      {
+        title: "Grow",
+        desc: "Ongoing marketing, ad campaigns, and iteration based on real data.",
+      },
+    ],
+    journeySection: {
+      kicker: "The journey",
+      title: "From Alexandria to Dubai",
+      from: "From",
+      now: "Now",
+      localTime: "Local time",
+    },
+    journey: {
+      from: { city: "Alexandria, Egypt", coords: "31.20° N 29.92° E" },
+      now: { city: "Dubai, UAE", coords: "25.20° N 55.27° E", timeZone: "Asia/Dubai" },
     },
     experienceSection: {
       kicker: "Career path",
@@ -365,6 +405,9 @@ export const content = {
       { value: 3, suffix: "", label: "جهات تدريسية" },
       { value: 6, suffix: "+", label: "دورة تدريبية" },
     ],
+    brandsSection: {
+      label: "عملت معاهم",
+    },
     skillsSection: {
       kicker: "مجالات عملي",
       title: "خبرة متكاملة في المنتج والنمو",
@@ -406,6 +449,43 @@ export const content = {
       title: "الأدوات والتقنيات اللي بشتغل بيها",
       devLabel: "تطوير وتصميم",
       marketingLabel: "تسويق وتجارة إلكترونية",
+    },
+    processSection: {
+      kicker: "طريقة شغلي",
+      title: "من الفكرة للإطلاق، ومكمّلين بعد كده",
+    },
+    process: [
+      {
+        title: "فهم الهدف",
+        desc: "أفهم الهدف، الجمهور المستهدف، والصورة الحقيقية للنجاح في المشروع.",
+      },
+      {
+        title: "التصميم",
+        desc: "واير فريم وتصميم واجهات يعكسوا الهوية، مبنيين على رحلة مستخدم حقيقية.",
+      },
+      {
+        title: "البناء",
+        desc: "كود نضيف وقابل للتوسع، فرونت إند وباك إند، مع أي تكاملات المشروع محتاجها.",
+      },
+      {
+        title: "الإطلاق",
+        desc: "اختبار الجودة، تجهيز الأداء والـ SEO، وإطلاق سلس للموقع.",
+      },
+      {
+        title: "النمو",
+        desc: "تسويق مستمر، حملات إعلانية، وتطوير بناءً على بيانات حقيقية.",
+      },
+    ],
+    journeySection: {
+      kicker: "الرحلة",
+      title: "من الإسكندرية لدبي",
+      from: "من",
+      now: "دلوقتي",
+      localTime: "التوقيت المحلي",
+    },
+    journey: {
+      from: { city: "الإسكندرية، مصر", coords: "٣١.٢٠° ش ٢٩.٩٢° ق" },
+      now: { city: "دبي، الإمارات", coords: "٢٥.٢٠° ش ٥٥.٢٧° ق", timeZone: "Asia/Dubai" },
     },
     experienceSection: {
       kicker: "المسار المهني",

@@ -12,6 +12,7 @@ export default function Hero() {
   const t = content[lang];
   const roleText = useTypewriter(t.profile.roles);
   const Arrow = lang === "ar" ? ArrowLeft : ArrowRight;
+  const nameChars = lang === "ar" ? [t.profile.name] : t.profile.name.split("");
 
   return (
     <section
@@ -41,8 +42,30 @@ export default function Hero() {
             {t.profile.badge}
           </span>
 
-          <h1 className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-ink-950 sm:text-5xl lg:text-6xl dark:text-white">
-            {t.profile.name}
+          <h1
+            className="mt-6 text-4xl font-bold leading-[1.1] tracking-tight text-ink-950 sm:text-5xl lg:text-6xl dark:text-white"
+            aria-label={t.profile.name}
+          >
+            <motion.span
+              initial="hidden"
+              animate="visible"
+              aria-hidden="true"
+              variants={{ visible: { transition: { staggerChildren: 0.035 } } }}
+            >
+              {nameChars.map((ch, i) => (
+                <motion.span
+                  key={i}
+                  className="inline-block"
+                  variants={{
+                    hidden: { opacity: 0, y: 18 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {ch === " " ? " " : ch}
+                </motion.span>
+              ))}
+            </motion.span>
           </h1>
 
           <p className="mt-4 h-10 text-2xl font-semibold text-gold-600 sm:text-3xl dark:text-gold-300">

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/LanguageProvider";
 import { content } from "@/lib/content";
 import { devTools, marketingTools } from "@/lib/tools";
+import SectionKicker from "./SectionKicker";
 
 function ToolGrid({ items }: { items: typeof devTools }) {
   return (
@@ -35,19 +36,7 @@ export default function Tools() {
   return (
     <section className="bg-ink-50/60 py-24 dark:bg-ink-900/40">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mx-auto max-w-2xl text-center"
-        >
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-gold-600 dark:text-gold-400">
-            {t.toolsSection.kicker}
-          </h2>
-          <p className="mt-3 text-3xl font-bold text-ink-950 sm:text-4xl dark:text-white">
-            {t.toolsSection.title}
-          </p>
-        </motion.div>
+        <SectionKicker n="02" kicker={t.toolsSection.kicker} title={t.toolsSection.title} />
 
         <div className="mt-14">
           <h3 className="mb-6 text-sm font-bold uppercase tracking-wide text-ink-500 dark:text-ink-400">
